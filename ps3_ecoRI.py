@@ -7,7 +7,7 @@ dna_seq = dna_orig.upper() #this converts the sequence to uppercase
 
 ecoRI_start = dna_seq.find('GAATTC') + 1 #this gives me the first nt position of the first ecoRI site
 
-ecoRI_end = ecoRI_start + 6 #this gives me the last nt position of the first ecoRI site
+ecoRI_end = ecoRI_start + 5 #this gives me the last nt position of the first ecoRI site
 
 print(f"""For the forward strand
       EcoRI startPos:{ecoRI_start} endPos:{ecoRI_end}""")
@@ -21,7 +21,7 @@ rev_complement = wxyz_complement.replace('W','T').replace('X','G').replace('Y','
 
 ecoRI_start = rev_complement.find('GAATTC') + 1 #this gives me the first nt position of the first ecoRI site
 
-ecoRI_end = ecoRI_start + 6 #this gives me the last nt position of the first ecoRI site
+ecoRI_end = ecoRI_start + 5 #this gives me the last nt position of the first ecoRI site
 
 print(f"""For the opposite strand
       EcoRI startPos:{ecoRI_start} endPos:{ecoRI_end}""")
