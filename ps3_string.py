@@ -15,7 +15,20 @@ rna_seq = dna_seq.replace('T','U') #converts the DNA sequence in upper case to R
 print(f"The RNA sequence of this DNA is: {rna_seq}.")
 
 print(f'The total lenght of my sequence is: {len(dna_seq)}.') #counts total number of nt
+
 gc_content = dna_seq.count('C')+dna_seq.count('G') #sums the G and C numbers
 print(gc_content)
 
 print(f'The GC content of the sequence is {gc_content/(len(dna_seq)):.2%}.') #divide by the total length and make into a percentage to get GC content
+
+at_content = dna_seq.count('A')+dna_seq.count('T') #sums the A and T numbers
+print(at_content)
+
+print(f'The AT content of the sequence is {at_content/(len(dna_seq)):.2%}.') #divide by the total length and make into a percentage to get AT content
+
+sub_dna = dna_seq[99:200] #extracts and prints nt from 100-200
+print(sub_dna)
+
+sub_gc_content = sub_dna.count('C')+sub_dna.count('G') #sums the G and C numbers
+
+print(f'The GC content of the sub-sequence is {sub_gc_content/(len(sub_dna)):.2%}.') #divide by the total length and make into a percentage to get GC content
