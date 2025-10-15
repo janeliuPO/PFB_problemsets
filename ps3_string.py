@@ -26,9 +26,17 @@ print(at_content)
 
 print(f'The AT content of the sequence is {at_content/(len(dna_seq)):.2%}.') #divide by the total length and make into a percentage to get AT content
 
-sub_dna = dna_seq[99:200] #extracts and prints nt from 100-200
+reverse_dna_seq = dna_orig[::-1] #reverse the dna_seq
+print(reverse_dna_seq)
+wxyz_complement = reverse_dna_seq.replace('A','W').replace('C','X').replace('G','Y').replace('T','Z').replace('a','w').replace('c','x').replace('g','y').replace('t','z') #convert the A's to X's, a's to x's etc - the change to x or x prevents the things I just changed to be change again.
+rev_complement = wxyz_complement.replace('W','T').replace('X','G').replace('Y','C').replace('Z','A').replace('w', 't').replace('x','g').replace('y', 'c').replace('z', 'a') #convert the W's and w's to T's, t's - this should be the rev complement!
+print(f'The reverse complement of my DNA sequence is: {rev_complement}.')
+
+sub_dna = dna_seq[0:] #extracts and prints nt from 100-200
 print(sub_dna)
 
 sub_gc_content = sub_dna.count('C')+sub_dna.count('G') #sums the G and C numbers
 
 print(f'The GC content of the sub-sequence is {sub_gc_content/(len(sub_dna)):.2%}.') #divide by the total length and make into a percentage to get GC content
+
+
