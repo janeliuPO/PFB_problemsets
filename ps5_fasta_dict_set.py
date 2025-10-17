@@ -11,13 +11,18 @@ import sys
 #dictionaries have {}
 fastaDict = {}
 
-with open("fastapractice.txt","r") as fasta_read:
+with open("Python_06.fasta","r") as fasta_read:
     for line in fasta_read:
         line = line.rstrip()
         if line.find('>') == 0:
             seqID = line.lstrip('>')
+            #does key already exist in the dictionary
         else:
-            fullseq = line
-            fastaDict[seqID] = fullseq
-
+            seq = line
+            if seqID in fastaDict:
+                value = fastaDict[seqID] + line
+                fastaDict[seqID] = value
+            else: 
+                fastaDict[seqID] = line
+            
 print(fastaDict)
