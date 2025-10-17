@@ -1,0 +1,6 @@
+>seqID1
+aattcg
+gggccc
+>seqID2
+gggccc
+aaattt
