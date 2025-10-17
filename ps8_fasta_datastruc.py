@@ -12,11 +12,11 @@ with open("Python_08.fasta.txt","r") as fasta_read:
         line = line.rstrip()
         if line.find('>') == 0:
             remove = line.lstrip('>')
-            print(remove)
+            # print(remove)
             id_list = remove.split()
-            print(id_list)
+            # print(id_list)
             gene_name = id_list[0]
-            print(gene_name) 
+            # print(gene_name) 
             #does key already exist in the dictionary
         else:
             seq = line
