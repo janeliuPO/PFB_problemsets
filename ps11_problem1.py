@@ -9,19 +9,25 @@ class DNASequence(object):
         self.seq_name = seq_name
         self.organism = organism
     
-def dna_rc(self):
-    clean_dna = re.sub(r"\s+", "", self) 
+def dna_length(dna):
+    clean_dna = re.sub(r"\s+", "", dna) 
+    total_nt = len(clean_dna)
+    return total_nt
+
+def dna_counts(dna):
+    clean_dna = re.sub(r"\s+", "", dna) 
     #replace all non-characters with nothing
     seq = clean_dna.upper()
-    seq = seq.replace('A', 't')
-    seq = seq.replace('T', 'a')
-    seq = seq.replace('G', 'c')
-    seq = seq.replace('C', 'g')
-    seq = seq[::-1]
-    return seq.upper()
+    count_A = seq.count('A')
+    count_T = seq.count('T')
+    count_C = seq.count('C')
+    count_G = seq.count('G')
+    counts = f'the number of As is: {count_A}, the number of Ts is: {count_T}, the number of Cs is: {count_C}, and the number of Ts is: {count_T}.'
+    return counts
 
 dna_seq1 = DNASequence('agagagtttccc', 'test1', 'bunnies')
 dna_seq2 = DNASequence('aaggttaaggtt', 'test2', 'panda')
 
 for input in [dna_seq1,dna_seq2]:
-    print(f'{input.seq_name} has the sequence: {input.sequence} and is from {input.organism}.')
+    print(f'{input.seq_name}({input.organism}) has the sequence: {input.sequence} with a length of {dna_length(input.sequence)}.')
+    print(f'For {input.seq_name}, {dna_counts(input.sequence)}')
