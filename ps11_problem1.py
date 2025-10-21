@@ -3,7 +3,6 @@ import sys
 import re
 
 class DNASequence(object):
-
     def __init__(self, sequence, seq_name, organism):
         self.sequence = sequence.upper()
         self.seq_name = seq_name
@@ -38,7 +37,9 @@ def dna_gc(dna):
 dna_seq1 = DNASequence('agagagtttccc', 'test1', 'bunnies')
 dna_seq2 = DNASequence('aaggttaaggtt', 'test2', 'panda')
 
-for input in [dna_seq1,dna_seq2]:
-    print(f'{input.seq_name}({input.organism}) has the sequence: {input.sequence} with a length of {dna_length(input.sequence)}.')
-    print(f'For {input.seq_name}, {dna_counts(input.sequence)}')
-    print(f'The GC content is {dna_gc(input.sequence):.2%}')
+with open("Python_11.output.fa", "w") as file:
+    for input in [dna_seq1,dna_seq2]:
+    # print(f'{input.seq_name}({input.organism}) has the sequence: {input.sequence} with a length of {dna_length(input.sequence)}.')
+    # print(f'For {input.seq_name}, {dna_counts(input.sequence)}')
+    # print(f'The GC content is {dna_gc(input.sequence):.2%}')
+        file.write(f'>{input.seq_name}\n{input.sequence}\n')

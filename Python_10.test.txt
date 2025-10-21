@@ -1,4 +1,4 @@
 >seqID1
-aattggaatt
+attggaatt
 >SeqID2
 aattcagacc
