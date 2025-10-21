@@ -6,18 +6,33 @@ filename = sys.argv[1]
 fasta_dict = SeqIO.to_dict(SeqIO.parse(filename, "fasta"))
 total_seqs = len(fasta_dict)
 # print(fasta_dict)
-print(f'total nuber of sequences: {total_seqs}')
-
+print(fasta_dict)
 
 for seq_record in SeqIO.parse(filename, "fasta"):
     gene_id = seq_record.id
     sequence = seq_record.seq
+    organism = seq_record.org
+    print(gene_id)
+    print(sequence)
+    print(organism)
+
+# search_string = 'Salmonella paratyphi B'
+# spb_dict = {}
+# for key, value in fasta_dict.items():
+#     if search_string in value:
+#         spb_dict[key] = value
+
+# print(spb_dict)
+
+# for seq_record in SeqIO.parse(filename, "fasta"):
+#     gene_id = seq_record.id
+#     sequence = seq_record.seq
     # aa_count += len(sequence)
     # print(sequence)
 
 
-with open("ps_blast.out", "w") as fasta_file:
-    fasta_file.write(fasta_dict[0])
+# with open("ps_blast.out", "w") as fasta_file:
+#     fasta_file.write(fasta_dict[0])
 # # print(sorted_list)
 # print(f'total number of nucleotides: {nt_count}')
 # print(f'average length of sequences: {nt_count/total_seqs}')
