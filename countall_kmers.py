@@ -78,7 +78,8 @@ def main():
     #that should produce kmer_list
 
     for sequence in seq_list:
-        all_kmers.extend(sequence_to_kmer_list(sequence, kmer_length))
+        kmers_list = sequence_to_kmer_list(sequence, kmer_length)
+        all_kmers.extend(kmers_list)
 
     # print(all_kmers)
     # print(count_kmers(all_kmers)) 
