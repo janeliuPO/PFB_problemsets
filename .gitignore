@@ -2,3 +2,4 @@
 *.fasta.gz
 uniprot_sprot.fasta
 __pycache__/
+data/uniprot_sprot.fasta
