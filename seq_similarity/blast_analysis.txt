@@ -38,3 +38,10 @@ Analysis with blast_rand5-200:
  BLOSUM80 	  28.000  	    75    	5.9
   PAM30   	  44.444  	    27    	6.0
   PAM70   	  43.333  	    30    	9.1
+
+Analysis with blast_rand5-200:
+  Matrix  	   % ID   	   alen   	evalue
+ BLUSUM62 	  28.205  	    78    	3.5
+ BLOSUM80 	  28.000  	    75    	5.9
+  PAM30   	  44.444  	    27    	6.0
+  PAM70   	  43.333  	    30    	9.1
